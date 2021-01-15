@@ -836,7 +836,7 @@ function getPullRequests() {
 
 function sendNotification(webhookUrl, message) {
   console.log(message)
-  return axios.post(webhookUrl, { text : message }, {headers: {
+  return axios.post(webhookUrl, { text : message }, { headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Authorization': `Bearer ${GITTER_TOKEN}`
@@ -853,7 +853,7 @@ async function main() {
     core.info(`There are ${pullRequestsWithRequestedReviewers.length} pull requests waiting for reviews`);
     if (pullRequestsWithRequestedReviewers.length) {
       const message = prettyMessage(pullRequestsWithRequestedReviewers);
-      await sendNotification(webhookUrl, channel, message);
+      await sendNotification(webhookUrl, message);
       core.info(`Notification sent successfully!`);
     }
   } catch (error) {
