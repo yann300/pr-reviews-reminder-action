@@ -864,7 +864,8 @@ async function main() {
     await doRepo(PULLS_ENDPOINT, webhookUrl, 'remix-project')
     await doRepo(`${GITHUB_API_URL}/repos/ethereum/remix-plugins-directory/pulls`, webhookUrl, 'remix-plugins-directory')
     await doRepo(`${GITHUB_API_URL}/repos/ethereum/remix-ide/pulls`, webhookUrl, 'remix-ide (documentation)')
-    await doRepo(`${GITHUB_API_URL}/repos/ethereum/remix-desktop/pulls`, webhookUrl, 'remix-desktop')    
+    await doRepo(`${GITHUB_API_URL}/repos/ethereum/remix-desktop/pulls`, webhookUrl, 'remix-desktop')
+    await doRepo(`${GITHUB_API_URL}/repos/ethereum/remix-plugin/pulls`, webhookUrl, 'remix-plugin')
   } catch (error) {
     core.setFailed(error.message);
   }
